@@ -1,4 +1,4 @@
-exports = module.exports = Myna;
+exports = module.exports = create;
 
 var util = require('util');
 
@@ -12,6 +12,10 @@ var util = require('util');
  *     
  */
 
+
+function create (messages) {
+  return new Myna(messages);
+}
 
 function Myna (messages) {
   this.messages = messages;

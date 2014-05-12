@@ -8,8 +8,7 @@ npm install myna
 
 ```javascript
 
-  var Myna = require('myna');
-  var myna = new Myna({
+  var myna = require('myna')({
     1001: 'invalid params',
     1002: 'unknown key: %s',
     1003: 'invalid id %s found in %s'

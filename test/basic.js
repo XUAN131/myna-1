@@ -7,7 +7,7 @@ describe('basic test', function () {
   var myna;
 
   it('define myna', function () {
-    myna = new Myna({
+    myna = Myna({
       1001: 'invalid params',
       1002: 'unknown key: %s',
       1003: 'invalid id %s found in %s'
@@ -30,6 +30,18 @@ describe('basic test', function () {
     (function () {
       throw myna.speak('1003', 'foo', 'bar');
     }).should.throw('invalid id foo found in bar');
+
+  });
+
+  it('test with wrong args', function () {
+    
+    (function () {
+      var error = myna.speak('none-exist');
+    }).should.throw();
+
+    (function () {
+      var error = myna.speak();
+    }).should.throw();
 
   });
 
