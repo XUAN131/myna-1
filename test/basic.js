@@ -45,4 +45,11 @@ describe('basic test', function () {
 
   });
 
+  it('test getMessage', function () {
+    myna.message(1001).should.equal('invalid params');
+    myna.getMessage(1002, 'id').should.equal('unknown key: id');
+    myna.message('1003', 'foo', 'bar').should.equal('invalid id foo found in bar');
+
+  });
+
 });
